@@ -7,11 +7,11 @@
     --color-smoke-lilac: #A57FB2;
     /* accent */
     --color-ember-pink: #D6A1E2;
-    /* glow tone */
+    /* glow tone (lilac) */
     --color-ash-grey: #B8B5C0;
     /* neutral text */
     --color-void-black: #0B0B0D;
-    /* page background */
+    /* page bg */
     --color-soft-ivory: #F2EDF5;
     /* light contrast */
     --color-shadow: rgba(0, 0, 0, .4);
@@ -55,7 +55,7 @@ a:focus {
     text-shadow: 0 0 8px var(--color-glow);
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion:reduce) {
     * {
         transition: none !important;
         animation: none !important;
@@ -103,7 +103,7 @@ footer {
 }
 
 /* =========================
-   Header & Brand
+   Header & Brand + Drawer
    ========================= */
 header {
     position: relative;
@@ -141,6 +141,79 @@ header {
 
 .nav-links a[aria-current="page"] {
     font-weight: 700;
+}
+
+/* Hamburger */
+.menu-btn {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: .5rem;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.menu-btn .bar {
+    width: 24px;
+    height: 2px;
+    background: currentColor;
+    display: block;
+    transition: background .3s ease, box-shadow .3s ease;
+}
+
+/* Ensure visibility on dark page backgrounds */
+.page-bg .menu-btn .bar {
+    background: var(--color-soft-ivory);
+}
+
+.page-bg .menu-btn:hover .bar,
+.page-bg .menu-btn:focus .bar {
+    background: var(--color-ember-pink);
+    box-shadow: 0 0 6px var(--color-glow);
+}
+
+/* Drawer */
+.drawer {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 1rem;
+    left: auto;
+    min-width: 180px;
+    text-align: center;
+    background: rgba(11, 11, 13, .9);
+    border: 1px solid var(--color-smoke-lilac);
+    border-radius: 10px;
+    padding: .8rem 1rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .6);
+    backdrop-filter: blur(8px);
+    z-index: 999;
+}
+
+.drawer[hidden] {
+    display: none;
+}
+
+.drawer .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .6rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.drawer a {
+    color: var(--color-soft-ivory);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color .3s ease, text-shadow .3s ease;
+}
+
+.drawer a:hover {
+    color: var(--color-ember-pink);
+    text-shadow: 0 0 6px var(--color-glow);
 }
 
 /* =========================
@@ -232,79 +305,6 @@ header nav,
     filter: drop-shadow(0 0 10px var(--color-ember-pink));
     transform: scale(1.05);
     cursor: pointer;
-}
-
-/* =========================
-   Hamburger & Drawer
-   ========================= */
-.menu-btn {
-    display: inline-flex;
-    flex-direction: column;
-    gap: 4px;
-    padding: .5rem;
-    border: 0;
-    background: none;
-    cursor: pointer;
-}
-
-.menu-btn .bar {
-    width: 24px;
-    height: 2px;
-    background: currentColor;
-    display: block;
-    transition: background .3s ease, box-shadow .3s ease;
-}
-
-.page-bg .menu-btn .bar {
-    background: var(--color-soft-ivory);
-}
-
-.page-bg .menu-btn:hover .bar,
-.page-bg .menu-btn:focus .bar {
-    background: var(--color-ember-pink);
-    box-shadow: 0 0 6px var(--color-glow);
-}
-
-.drawer {
-    position: absolute;
-    top: calc(100% + 8px);
-    right: 1rem;
-    left: auto;
-    min-width: 180px;
-    text-align: center;
-    background: rgba(11, 11, 13, .9);
-    border: 1px solid var(--color-smoke-lilac);
-    border-radius: 10px;
-    padding: .8rem 1rem;
-    box-shadow: 0 0 12px rgba(0, 0, 0, .6);
-    backdrop-filter: blur(8px);
-    z-index: 999;
-}
-
-.drawer[hidden] {
-    display: none;
-}
-
-.drawer .nav-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: .6rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.drawer a {
-    color: var(--color-soft-ivory);
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color .3s ease, text-shadow .3s ease;
-}
-
-.drawer a:hover {
-    color: var(--color-ember-pink);
-    text-shadow: 0 0 6px var(--color-glow);
 }
 
 /* =========================
@@ -409,21 +409,18 @@ header nav,
 }
 
 /* =========================
-   Sections & Projects (shared)
+   Shared Sections & Titles
    ========================= */
-
-/* --- Page Titles (like "Projects") --- */
 main h1 {
     text-align: center;
     font-family: "Aref Ruqaa", serif;
     font-weight: 900;
-    font-size: clamp(2rem, 4vw + 0.5rem, 3rem);
+    font-size: clamp(2rem, 4vw + .5rem, 3rem);
     color: var(--color-ember-pink);
-    /* that soft lilac accent */
-    text-shadow: 0 0 12px rgba(165, 127, 178, 0.4);
+    text-shadow: 0 0 12px rgba(165, 127, 178, .4);
     margin-top: 1.5rem;
     margin-bottom: 2rem;
-    letter-spacing: 0.5px;
+    letter-spacing: .5px;
 }
 
 section {
@@ -446,136 +443,125 @@ main section p {
     color: #ccc;
 }
 
-/* ---- Project Grid (single source of truth) ---- */
+/* =========================
+   Projects Grid (3/2/1)
+   ========================= */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: 1.25rem;
 }
 
-.project-grid.two-col {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+@media (min-width:680px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-/* Thumbnails & videos share same tile styling */
-.project-grid img,
-.project-grid video {
+@media (min-width:1024px) {
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Shared tiles (images) */
+.project-grid img {
     width: 100%;
     height: auto;
-    /* allows logos/images to size naturally */
     border-radius: 10px;
     border: 1px solid #444;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform .2s ease, box-shadow .2s ease;
 }
 
-/* Keep videos a uniform aspect ratio */
-.project-grid video {
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-}
-
-/* Hover glow */
-.project-grid img:hover,
-.project-grid video:hover {
+.project-grid img:hover {
     transform: scale(1.03);
-    box-shadow: 0 0 12px rgba(214, 161, 226, 0.4);
+    box-shadow: 0 0 12px rgba(214, 161, 226, .4);
 }
 
-/* Centered play icon on video thumbnails (no corner badge) */
-.video-thumb {
-    position: relative;
-    display: block;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.video-thumb img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.play-center {
-    position: absolute;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    font-size: clamp(2rem, 5vw, 3.25rem);
-    line-height: 1;
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: 0 0 18px rgba(0, 0, 0, 0.7);
-    opacity: 0.85;
-    transition: transform .2s ease, opacity .2s ease;
-    pointer-events: none;
-    /* keeps the click on the link */
-}
-
-.video-thumb:hover .play-center {
-    transform: scale(1.06);
-    opacity: 1;
-}
-
-/* If you previously had a .video-badge corner element, you can remove its HTML
-   or neutralize it here just in case: */
-.video-badge {
-    display: none !important;
-}
-
-/* Clickable video thumbnail wrapper for badges */
-.video-thumb {
-    position: relative;
-    display: block;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.video-thumb img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-/* Tiny play badge */
-.video-badge {
-    position: absolute;
-    bottom: .5rem;
-    right: .5rem;
-    background: rgba(0, 0, 0, .6);
-    border: 1px solid var(--color-smoke-lilac);
-    color: var(--color-soft-ivory);
-    font-size: .85rem;
-    padding: .2rem .45rem;
-    border-radius: .4rem;
-}
-
-/* Only affect images inside the Logos section grid */
+/* Keep logos from being stretched too tall (optional) */
 #logos-title+.project-grid img {
     max-height: 260px;
-    /* tweak to taste */
     width: auto;
-    /* keep proportions */
     margin: 0 auto;
-    /* center if narrower than tile */
     display: block;
 }
 
 
 /* =========================
-   Small Screen Tweaks
+   YouTube Embeds / Thumbs
    ========================= */
-@media (max-width:480px) {
-    .bottom-nav {
-        width: min(94%, 1200px);
-        padding: .6rem .75rem;
-    }
+/* For direct embeds on About or elsewhere */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+    border: 1px solid #444;
+}
 
-    .bottom-nav .nav-links {
-        gap: .9rem;
-    }
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 12px;
+}
 
-    .footer-logo {
-        width: 54px;
-    }
+/* Thumbnail links that open YouTube in new tab */
+.video-thumb {
+    position: relative;
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform .25s ease;
+}
+
+.video-thumb img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform .4s ease, filter .4s ease;
+}
+
+/* Centered play label on hover (no corner badge) */
+.video-thumb::after {
+    content: "▶ Play";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Aref Ruqaa", serif;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    color: var(--color-soft-ivory);
+    text-shadow: 0 0 10px var(--color-glow);
+    background: rgba(11, 11, 13, .55);
+    opacity: 0;
+    transform: scale(1.1);
+    transition: opacity .35s ease, transform .4s ease;
+    border-radius: 10px;
+}
+
+.video-thumb:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.video-thumb:hover::after {
+    opacity: 1;
+    transform: scale(1);
+    background: rgba(11, 11, 13, .65);
+}
+
+/* If any old corner badge exists, nuke it */
+.video-badge {
+    display: none !important;
 }
 
 /* =========================
@@ -680,7 +666,7 @@ main section p {
     margin: .5rem auto 1rem;
 }
 
-/* === Mosaic Gallery (About) === */
+/* === Mosaic gallery (if you keep any local photos) === */
 .mosaic {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -737,7 +723,9 @@ main section p {
     }
 }
 
-/* ===== Project Video Lightbox (kept if you reuse) ===== */
+/* =========================
+   Lightbox (kept for reuse)
+   ========================= */
 .lightbox {
     position: fixed;
     inset: 0;
@@ -794,71 +782,30 @@ main section p {
     box-shadow: 0 0 14px var(--color-glow);
 }
 
-/* wider layout nicety */
-@media (min-width:720px) {
-    .about-card {
-        padding: 1.5rem 1.75rem 2rem;
+/* =========================
+   Small Screen Tweaks
+   ========================= */
+@media (max-width:480px) {
+    .bottom-nav {
+        width: min(94%, 1200px);
+        padding: .6rem .75rem;
     }
 
-    .about-facts {
-        grid-template-columns: 1fr 1fr;
+    .bottom-nav .nav-links {
+        gap: .9rem;
+    }
+
+    .footer-logo {
+        width: 54px;
     }
 }
 
-/* === Video thumbnail hover overlay === */
-.video-thumb {
-    position: relative;
-    display: block;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.25s ease;
-}
-
-.video-thumb img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.4s ease, filter 0.4s ease;
-}
-
-/* Overlay itself */
-.video-thumb::after {
-    content: "▶ Play";
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Aref Ruqaa", serif;
-    font-size: 1.4rem;
-    color: var(--color-soft-ivory);
-    background: rgba(11, 11, 13, 0.55);
-    opacity: 0;
-    transform: scale(1.1);
-    transition: opacity 0.35s ease, transform 0.4s ease;
-    border-radius: 10px;
-    letter-spacing: 1px;
-    text-shadow: 0 0 10px var(--color-glow);
-}
-
-/* Subtle lift and glow on hover */
-.video-thumb:hover img {
-    transform: scale(1.05);
-    filter: brightness(1.1);
-}
-
-.video-thumb:hover::after {
-    opacity: 1;
-    transform: scale(1);
-    background: rgba(11, 11, 13, 0.65);
-}
-
-
-/* ===== Page Background (non-home pages) ===== */
+/* =========================
+   Page Background (non-home)
+   ========================= */
 body.page-bg {
     background-image: url(images/background.png);
-    /* lowercase filename */
+    /* make sure filename is lowercase if the file is */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -873,25 +820,4 @@ body.page-bg::before {
     inset: 0;
     background: rgba(0, 0, 0, .35);
     z-index: -1;
-}
-
-/* === Projects grid: force 3/2/1 columns === */
-.project-grid {
-    grid-template-columns: 1fr;
-    /* default: 1 col on mobile */
-    gap: 1.25rem;
-}
-
-@media (min-width: 680px) {
-    .project-grid {
-        grid-template-columns: repeat(2, 1fr);
-        /* tablets: 2 cols */
-    }
-}
-
-@media (min-width: 1024px) {
-    .project-grid {
-        grid-template-columns: repeat(3, 1fr);
-        /* desktop: 3 cols */
-    }
 }
