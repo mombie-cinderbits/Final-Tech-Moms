@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projects | Cassidy Barnes</title>
+    <meta name="description" content="Creative projects by Cassidy Barnes — video intros, logos, banners, and more.">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="page-bg">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header>
+        <a class="brand" href="index.html">Cassidy Barnes</a>
+
+        <button id="menu-toggle" class="menu-btn" aria-expanded="false" aria-controls="primary-nav">
+            <span class="visually-hidden">Menu</span>
+            <span aria-hidden="true" class="bar"></span>
+            <span aria-hidden="true" class="bar"></span>
+            <span aria-hidden="true" class="bar"></span>
+        </button>
+
+        <nav id="primary-nav" class="drawer" aria-label="Primary" hidden>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html" aria-current="page">Projects</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <h1>Projects</h1>
+
+        <!-- Videos -->
+        <section aria-labelledby="videos-title">
+            <h2 id="videos-title">Videos</h2>
+            <p>Intro and outro videos I’ve created for my YouTube channels and creative projects. Each opens in a new
+                tab.</p>
+
+            <div class="project-grid">
+                <article>
+                    <a href="videos/cinderbitsintro.mp4" target="_blank" rel="noopener noreferrer">
+                        <img src="images/cinderbitsintropic.png" alt="Cinderbits Intro Thumbnail">
+                    </a>
+                </article>
+
+                <article>
+                    <a href="videos/MarshmallowMode_Intro.mp4" target="_blank" rel="noopener noreferrer">
+                        <img src="images/marshmallowmodeintrovid.png" alt="Marshmallow Mode Intro Thumbnail">
+                    </a>
+                </article>
+
+                <article>
+                    <a href="videos/MombiePlayzIntro.mp4" target="_blank" rel="noopener noreferrer">
+                        <img src="images/mombieplayzpic.png" alt="Mombie Playz Intro Thumbnail">
+                    </a>
+                </article>
+
+                <article>
+                    <a href="videos/ASMRintro.mp4" target="_blank" rel="noopener noreferrer">
+                        <img src="images/mosintrovidpic.png" alt="Mother of Shadows Intro Thumbnail">
+                    </a>
+                </article>
+
+                <article>
+                    <a href="videos/mombieintro.mp4" target="_blank" rel="noopener noreferrer">
+                        <img src="images/mombieasmrintropic.png" alt="Mombie Intro Thumbnail">
+                    </a>
+                </article>
+
+                <article>
+                    <a href="videos/mombieoutro.mp4" target="_blank" rel="noopener noreferrer">
+                        <img src="images/mombieasmroutropic.png" alt="Mombie Outro Thumbnail">
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Logos -->
+        <section aria-labelledby="logos-title">
+            <h2 id="logos-title">Logos</h2>
+            <p>Brand and channel logo designs — simple marks with a touch of story.</p>
+            <div class="project-grid">
+                <article><img src="images/mombielogo.png" alt="Mombie logo"></article>
+                <article><img src="images/cinderbitsname.png" alt="Cinderbits wordmark"></article>
+                <article><img src="images/soapsupimage.png" alt="Soaps up logo"></article>
+            </div>
+        </section>
+
+        <!-- Banners -->
+        <section aria-labelledby="banners-title">
+            <h2 id="banners-title">Banners</h2>
+            <p>Social and YouTube banners for gaming and creative channels.</p>
+            <div class="project-grid">
+                <article><img src="images/banner1.jpg" alt="Banner design 1"></article>
+                <article><img src="images/banner2.jpg" alt="Banner design 2"></article>
+                <article><img src="images/banner3.jpg" alt="Banner design 3"></article>
+            </div>
+        </section>
+
+        <!-- Other -->
+        <section aria-labelledby="other-title">
+            <h2 id="other-title">Other Designs</h2>
+            <p>Miscellaneous creative work and design experiments.</p>
+            <div class="project-grid two-col">
+                <article><img src="images/other1.jpg" alt="Other design example 1"></article>
+                <article><img src="images/other2.jpg" alt="Other design example 2"></article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="year"></span> Cassidy Barnes</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const btn = document.getElementById('menu-toggle');
+        const nav = document.getElementById('primary-nav');
+        if (btn && nav) {
+            btn.addEventListener('click', () => {
+                const open = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', String(!open));
+                nav.hidden = open;
+            });
+        }
+    </script>
+</body>
+
+</html>
