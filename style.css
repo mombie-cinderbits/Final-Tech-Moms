@@ -821,3 +821,104 @@ body.page-bg::before {
     background: rgba(0, 0, 0, .35);
     z-index: -1;
 }
+
+/* Hobbies — chips under the lead */
+.hobby-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    /* nicer spacing */
+    justify-content: center;
+    /* center the row */
+    padding: 0;
+    margin: 0.5rem 0 1.25rem;
+    list-style: none;
+}
+
+.hobby-tags li {
+    font-size: 1rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(165, 127, 178, .35);
+    background: rgba(165, 127, 178, .15);
+    color: var(--color-soft-ivory);
+    transition: background .3s ease, transform .2s ease;
+}
+
+.hobby-tags li:hover {
+    background: rgba(165, 127, 178, .25);
+    transform: scale(1.05);
+}
+
+
+/* Mosaic captions (soft, unobtrusive) */
+.mosaic a {
+    position: relative;
+}
+
+.tile-cap {
+    position: absolute;
+    left: .5rem;
+    bottom: .5rem;
+    font-size: .85rem;
+    padding: .2rem .45rem;
+    border-radius: .4rem;
+    background: rgba(11, 11, 13, .55);
+    border: 1px solid rgba(165, 127, 178, .35);
+    color: var(--color-soft-ivory);
+    pointer-events: none;
+}
+
+/* YouTube responsive wrapper (keeps your grid tidy) */
+.yt-wrap iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #444;
+}
+
+/* === Hobbies Page Spacing Tweaks === */
+
+/* Give breathing room between H1, quote, and tags */
+.about-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    /* space between heading, quote, and tags */
+    text-align: center;
+}
+
+.about-header h1 {
+    margin-bottom: 0.2rem;
+}
+
+.about-lead {
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
+    max-width: 600px;
+}
+
+/* Space out the hobby tag group a little more */
+.hobby-tags {
+    gap: 0.75rem 1rem;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+}
+
+/* Slightly enlarge and soften the tag style */
+.hobby-tags li {
+    font-size: 1rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 1rem;
+    background: rgba(165, 127, 178, 0.15);
+    transition: background .3s ease,
+        transform 0.2s ease;
+}
+
+.hobby-tags li:hover {
+    background: rgba(165, 127, 178, 0.25);
+    transform: scale(1.05);
+}

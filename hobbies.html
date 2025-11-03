@@ -2,16 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Final Project</title>
+    <title>Hobbies | Cassidy Barnes</title>
+    <meta name="description"
+        content="Cassidy’s hobbies — gaming, design, paddleboarding, wood flowers, camping, decorating, and all things creative.">
     <link rel="stylesheet" href="style.css">
-
-
 </head>
 
 <body class="page-bg">
-
     <a class="skip-link" href="#main">Skip to main content</a>
 
     <header>
@@ -33,12 +32,186 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-
     </header>
 
     <main id="main">
-        <!-- page-unique content goes here -->
-        <h1>This is the hobbies page</h1>
+        <article class="about-card">
+            <header class="about-header">
+                <h1>Hobbies</h1>
+                <p class="about-lead">“Digital nocturne, real-world joy — little sparks I keep coming back to.”</p>
+                <ul class="hobby-tags" aria-label="Hobby list">
+
+                    <li>🎮 Gaming</li>
+                    <li>🎨 Design</li>
+                    <li>🏄‍♀️ Paddleboarding</li>
+                    <li>🌸 Wood Flowers</li>
+                    <li>🏕️ Camping</li>
+                    <li>🍕 Foodie</li>
+                    <li>👨‍👩‍👧‍👦 Family</li>
+                    <li>📖 Reading</li>
+                    <li>🎬 TV/Movies</li>
+                </ul>
+            </header>
+
+            <section class="about-body">
+                <!-- Gaming -->
+                <h2 class="about-subtitle">Gaming</h2>
+                <p>I love cozy, moody worlds and narrative adventures. On the lighter side: chill life-sims and
+                    crafting.
+                    On the darker side: stylish story games and a sprinkle of gothic vibes. I also run a GTA crew
+                    (<em>Moms</em>) and mess with logos, colors, and outfits just for fun.</p>
+
+                <!-- Design -->
+                <h2 class="about-subtitle">Design & Creative</h2>
+                <p>Logos, banners, intro/outro video polish, and small web experiments under <em>Cinderbits</em>.
+                    I like mixing soft glow, lilac accents, and a calm nocturne palette.</p>
+
+                <!-- Paddleboarding -->
+                <h2 class="about-subtitle">Paddleboarding</h2>
+                <p>My summer reset: calm water, golden hour, and a gentle cruise. I usually film short clips for
+                    memories.</p>
+
+                <!-- Wood Flowers -->
+                <h2 class="about-subtitle">Wood Flower Creations</h2>
+                <p>Arrangements and decor made from sola wood — dyeing, shaping, and building textures.
+                    It's slow crafting that scratches my design brain.</p>
+
+                <!-- Camping / Family / Decorating -->
+                <h2 class="about-subtitle">Camping, Family & Decorating</h2>
+                <p>We're a house of eight, so adventures are part logistics, part magic. We camp, make fire-side snacks,
+                    theme our spaces, and keep little traditions that make ordinary days feel special.</p>
+
+                <h2 class="about-subtitle">Reading</h2>
+                <p>
+                    Books are my favorite way to slow down and recharge. I'm drawn to stories that mix mystery, emotion,
+                    and atmosphere —
+                    especially gothic fiction, thrillers, and anything with a bit of magic or darkness. Reading gives me
+                    creative inspiration
+                    for everything else I do, from design projects to video ideas.
+                </p>
+
+                <h2 class="about-subtitle">Foodie Adventures</h2>
+                <p>
+                    I love exploring food as both comfort and creativity. Whether it's trying a new recipe at home,
+                    finding hidden-gem
+                    restaurants, or just experimenting with flavor combinations, cooking and eating are ways I connect
+                    with people and
+                    express myself. It's cozy, sensory, and endlessly rewarding.
+                </p>
+
+                <h2 class="about-subtitle">TV & Movies</h2>
+                <p>
+                    Film and television are a huge part of my downtime and inspiration. I gravitate toward beautifully
+                    shot, emotionally charged
+                    stories — from gothic dramas and psychological thrillers to cozy comedies. I love analyzing how
+                    storytelling, lighting,
+                    and music work together to create mood — it's my version of study and escape all at once.
+                </p>
+
+
+                <!-- Small hobby gallery (click to open image in new tab) -->
+                <section aria-labelledby="hobby-gallery" class="about-body">
+                    <h2 id="hobby-gallery" class="about-subtitle">Gallery</h2>
+                    <p class="about-lead" style="margin-top:.25rem;">A few snapshots (tap to view full size).</p>
+
+                    <div class="mosaic">
+                        <!-- GTA logo -->
+                        <a href="images/momsgonewild.png" target="_blank" rel="noopener">
+                            <img src="images/momsgonewild.png" alt="GTA Moms crew logo in turquoise crown style">
+                            <figcaption class="tile-cap">GTA Crew Logo</figcaption>
+                        </a>
+
+                        <!-- Camping -->
+                        <a href="images/camptrip.jpg" target="_blank" rel="noopener">
+                            <img src="images/camptrip.jpg" alt="Campfire evening with the family">
+                            <figcaption class="tile-cap">Camping</figcaption>
+                        </a>
+
+                        <!-- Kayaking -->
+                        <a href="images/paddleboardfun.jpg" target="_blank" rel="noopener">
+                            <img src="images/paddleboardfun.jpg" alt="Paddleboarding at sunset">
+                            <figcaption class="tile-cap">Kayaks</figcaption>
+                        </a>
+
+                        <!-- Foodie -->
+                        <a href="images/foodie.jpg" target="_blank" rel="noopener">
+                            <img src="images/foodie.jpg" alt="Rice with eggs and fried chicken">
+                            <figcaption class="tile-cap">Foodie</figcaption>
+                        </a>
+
+                        <!-- Wood flowers -->
+                        <a href="images/solaflowerproject.jpg" target="_blank" rel="noopener">
+                            <img src="images/solaflowerproject.jpg" alt="Sola wood flower arrangement">
+                            <figcaption class="tile-cap">Wood Flowers</figcaption>
+                        </a>
+
+                        <!-- Paddleboarding -->
+                        <a href="images/paddleboard.jpg" target="_blank" rel="noopener">
+                            <img src="images/paddleboard.jpg" alt="Paddleboarding at sunset">
+                            <figcaption class="tile-cap">Paddleboarding</figcaption>
+                        </a>
+
+                        <!-- Family -->
+                        <a href="images/familyfun.jpg" target="_blank" rel="noopener">
+                            <img src="images/familyfun.jpg" alt="Family snapshot on a weekend outing">
+                            <figcaption class="tile-cap">Family</figcaption>
+                        </a>
+
+                        <!-- Foodie2 -->
+                        <a href="images/pandagardens.jpg" target="_blank" rel="noopener">
+                            <img src="images/pandagardens.jpg" alt="Family snapshot on a weekend outing">
+                            <figcaption class="tile-cap">More food</figcaption>
+                        </a>
+                        <!-- Reading -->
+                        <a href="images/reading.jpg" target="_blank" rel="noopener">
+                            <img src="images/reading.jpg" alt="Family snapshot on a weekend outing">
+                            <figcaption class="tile-cap">Reading</figcaption>
+                        </a>
+                        <!-- Movie Night -->
+                        <a href="images/movienight.jpg" target="_blank" rel="noopener">
+                            <img src="images/movienight.jpg" alt="Family snapshot on a weekend outing">
+                            <figcaption class="tile-cap">Movie Night</figcaption>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Optional YouTube embeds row (replace URLs as needed) -->
+                <section aria-labelledby="hobby-videos" class="about-body">
+                    <h2 id="hobby-videos" class="about-subtitle">Short Clips</h2>
+                    <p>Quick highlights I've posted to YouTube.</p>
+
+                    <div class="project-grid">
+                        <article class="yt-wrap">
+                            <iframe src="https://www.youtube.com/embed/BrmCRzKSevU?rel=0&modestbranding=1"
+                                title="Short 1 — YouTube player"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </article>
+
+                        <article class="yt-wrap">
+                            <iframe src="https://www.youtube.com/embed/IHqthDh8vl4?rel=0&modestbranding=1"
+                                title="Short 2 — YouTube player"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </article>
+
+                        <article class="yt-wrap">
+                            <iframe src="https://www.youtube.com/embed/wJdeJrggNZE?rel=0&modestbranding=1"
+                                title="Short 3 — YouTube player"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </article>
+                    </div>
+                </section>
+
+
+                <footer class="about-cta">
+                    <a class="btn btn-ghost" href="projects.html">See Projects</a>
+                </footer>
+        </article>
     </main>
 
     <footer>
@@ -47,21 +220,17 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
 
-
-    <script>
         const btn = document.getElementById('menu-toggle');
         const nav = document.getElementById('primary-nav');
         if (btn && nav) {
             btn.addEventListener('click', () => {
                 const open = btn.getAttribute('aria-expanded') === 'true';
                 btn.setAttribute('aria-expanded', String(!open));
-                nav.hidden = open; // hides when open==true, shows when open==false
+                nav.hidden = open;
             });
         }
     </script>
-
 </body>
 
 </html>
