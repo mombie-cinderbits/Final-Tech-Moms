@@ -3,15 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Final Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Cassidy Barnes</title>
+    <meta name="description" content="Contact Cassidy Barnes — Connect, collaborate, or just say hello.">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
-
 </head>
 
 <body class="page-bg">
-
     <a class="skip-link" href="#main">Skip to main content</a>
 
     <header>
@@ -33,36 +32,65 @@
                 <li><a href="contact.html" aria-current="page">Contact</a></li>
             </ul>
         </nav>
-
     </header>
 
     <main id="main">
-        <!-- page-unique content goes here -->
-        <h1>This is the contact page</h1>
+        <section class="about-card">
+            <div class="about-header">
+                <h1>Contact Me</h1>
+                <p class="about-lead">Let's connect — whether it's about a project, collaboration, or just saying hi!
+                </p>
+            </div>
+
+            <div class="about-body">
+                <p>You can reach out through any of the following platforms. I love meeting other creatives, learners,
+                    and tech-minded people!</p>
+
+                <ul class="about-facts">
+                    <li><strong>Email:</strong> <a
+                            href="mailto:cassidy.barnes.creative@gmail.com">cassidy.barnes.creative@gmail.com</a></li>
+                    <li><strong>GitHub:</strong> <a href="https://github.com/mombie-cinderbits" target="_blank"
+                            rel="noopener">github.com/mombie-cinderbits</a></li>
+                    <li><strong>LinkedIn:</strong> <a href="www.linkedin.com/in/cassidy-brooks-cinderbits"
+                            target="_blank" rel="noopener">linkedin.com/in/cassidy-brooks-cinderbits</a></li>
+                    <li><strong>YouTube:</strong> <a href="https://www.youtube.com/@CinderbitsCo" target="_blank"
+                            rel="noopener">youtube.com/@CinderbitsCo</a></li>
+                    <li><strong>Instagram:</strong> <a href="https://www.instagram.com/cinderbitsco" target="_blank"
+                            rel="noopener">instagram.com/cinderbitsco</a></li>
+                </ul>
+
+                <p>If you're part of the Tech Moms community or exploring tech transitions, I'd love to connect and
+                    share resources or experiences.</p>
+            </div>
+        </section>
     </main>
+    <nav class="bottom-nav">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="hobbies.html">Hobbies</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
     <footer>
+
         <p>© <span id="year"></span> Cassidy Barnes</p>
     </footer>
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-
-    <script>
         const btn = document.getElementById('menu-toggle');
         const nav = document.getElementById('primary-nav');
         if (btn && nav) {
             btn.addEventListener('click', () => {
                 const open = btn.getAttribute('aria-expanded') === 'true';
                 btn.setAttribute('aria-expanded', String(!open));
-                nav.hidden = open; // hides when open==true, shows when open==false
+                nav.hidden = open;
             });
         }
     </script>
-
 </body>
-
 
 </html>
